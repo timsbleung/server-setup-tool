@@ -1,0 +1,19 @@
+{
+    "name": "phpserver",
+    "description": "A simple PHP server configuration",
+    "version": "1.0.0",
+    "metadata":
+        {
+           "owner": "root",
+           "group": "root",
+           "mode": "755"
+        },
+    "services": ["apache2"],
+    "packages": ["apache2", "libapache2-mod-php"],
+    "directoriesToMove": [
+        {
+            "source": "html",
+            "destination": "/var/www"
+        }
+    ]
+}
