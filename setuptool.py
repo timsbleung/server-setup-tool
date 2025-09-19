@@ -73,7 +73,7 @@ def main(config_name) -> None:
     for directory in config.directoriesToMove:
         source_directory = os.getcwd() + CONFIGS_DIRECTORY + "/" + config_name + "/files/" + directory.source
         print_green("Copying directory " + source_directory + " to " + directory.destination)
-        subprocess.run(["rsync", "--delete", "-o", config.metadata.owner, "-g", config.metadata.group, source_directory, directory.destination])
+        subprocess.run(["rsync", "--delete", "-r", "-o", config.metadata.owner, "-g", config.metadata.group, source_directory, directory.destination])
         subprocess.run(["chmod", config.metadata.mode, "-R", directory.destination])
     for service in config.services:
         print_green("Starting Service " + service)
