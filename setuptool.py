@@ -88,7 +88,7 @@ def main(config_name) -> None:
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        "TODO add usage information"
+        "Usage: python3 setuptool.py config_name"
         sys.exit(1)
     main(sys.argv[1])
 
